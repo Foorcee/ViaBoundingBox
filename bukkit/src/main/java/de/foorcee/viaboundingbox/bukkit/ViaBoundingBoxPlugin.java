@@ -27,12 +27,14 @@ public class ViaBoundingBoxPlugin extends JavaPlugin{
         if(injector != null){
             try{
                 new ViaBoundingBoxBukkitModule(injector);
+                getLogger().info("BoundingBox injector " + injector.getClass().getSimpleName() + " successful enabled");
             }catch (Exception ex){
+                getLogger().warning("Unable to load injector " + injector.getClass().getSimpleName() + " for version " + serverVersion);
                 ex.printStackTrace();
                 Bukkit.getPluginManager().disablePlugin(this);
             }
         }else{
-            System.out.println("Unable to find a injector for " + serverVersion);
+            getLogger().warning("Unable to find a injector for " + serverVersion);
             Bukkit.getPluginManager().disablePlugin(this);
         }
     }

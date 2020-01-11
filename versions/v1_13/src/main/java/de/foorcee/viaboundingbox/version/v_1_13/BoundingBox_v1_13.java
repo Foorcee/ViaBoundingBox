@@ -57,7 +57,6 @@ public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer,
                                         methodInsnNode.owner = "de/foorcee/viaboundingbox/common/asm/BoundingBoxCollisionBridge";
                                         methodInsnNode.name = "checkCollision";
                                         methodInsnNode.desc = "(Ljava/lang/Object;Ljava/lang/Object;)Z";
-                                         System.out.println("Found Method");
 
                                         AbstractInsnNode prev = node.getPrevious();
                                         while(prev != null){

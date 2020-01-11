@@ -14,7 +14,6 @@ public class CollisionBridge_v1_13 implements ICollisionBridge<EntityPlayer, Axi
 
     @Override
     public boolean checkCollision(EntityPlayer player, AxisAlignedBB boundingBox) {
-        System.out.println("Check collision " + player.getName() + ": " + boundingBox);
         return this.getVoxelShapeList(player, VoxelShapes.a(boundingBox), VoxelShapes.a()).stream().allMatch(VoxelShape::isEmpty);
     }
 

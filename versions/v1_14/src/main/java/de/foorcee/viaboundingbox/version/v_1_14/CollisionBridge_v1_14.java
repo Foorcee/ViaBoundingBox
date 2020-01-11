@@ -21,7 +21,6 @@ public class CollisionBridge_v1_14 implements ICollisionBridge<EntityPlayer, Axi
 
     @Override
     public boolean checkCollision(EntityPlayer player, AxisAlignedBB boundingBox) {
-        System.out.println("Check collision " + player.getName() + ": " + boundingBox);
         return Streams.concat(
                 checkBlockCollision(player.world, player, boundingBox),
                 player.world.a(player, boundingBox, Collections.emptySet()) //checkEntityCollision

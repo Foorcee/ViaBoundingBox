@@ -1,6 +1,6 @@
 # ViaBoundingBox 1.0 - Spigot/Paper/Bukkit
 
-**This plugin is an addon for ViaVerion and ViaBackwards that adjusts the bounding box of blocks according the player's version**
+**This plugin is an addon for ViaVerion and ViaBackwards that adjusts the bounding box of blocks according to the player's version**
 
 Supported Versions:
 **1.13.2** _(v1_13_R2)_, **1.14.x** _(v1_14_R1)_, **1.15.x** _(v1_15_R1)_
@@ -65,4 +65,4 @@ License:
 MIT License, see LICENSE for more details.
 
 
-Special thanks to all our [Contributors](https://github.com/ForceUpdate1/ViaBoundingBox/graphs/contributors) and @Gerrygames
+Special thanks to all our [Contributors](https://github.com/ForceUpdate1/ViaBoundingBox/graphs/contributors) and [@Gerrygames](https://github.com/Gerrygames)

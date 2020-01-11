@@ -5,7 +5,7 @@
     <parent>
         <artifactId>ViaBoundingBox</artifactId>
         <groupId>de.foorcee.viaboundingbox</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>de.foorcee.viaboundingbox</groupId>
             <artifactId>viaboundingbox-api</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
 
@@ -32,19 +32,19 @@
         <dependency>
             <groupId>de.foorcee.viaboundingbox</groupId>
             <artifactId>v1_15</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.foorcee.viaboundingbox</groupId>
             <artifactId>v1_14</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.foorcee.viaboundingbox</groupId>
             <artifactId>v1_13</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <scope>compile</scope>
         </dependency>
 

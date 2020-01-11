@@ -1,7 +1,7 @@
 name: ViaBoundingBox
 main: de.foorcee.viaboundingbox.bukkit.ViaBoundingBoxPlugin
 version: 1.0
-author: Foorcee
+authors: [Foorcee,Gerrygames]
 depend: [ViaVersion]
 load: STARTUP
 api-version: 1.13

@@ -35,7 +35,17 @@ Releases / Dev Builds:
 --------
 You can find official releases here:
 
-Soon
+https://github.com/ForceUpdate1/ViaBoundingBox/releases
+
+**Issues**: https://github.com/ForceUpdate1/ViaBoundingBox/issues
+
+----------
+
+How to compile Jar from Source:
+--------
+To build the project, all server versions must be cloned
+
+Just clone the project and run _setup.sh_ in the _work/_ directory
 
 ----------
 

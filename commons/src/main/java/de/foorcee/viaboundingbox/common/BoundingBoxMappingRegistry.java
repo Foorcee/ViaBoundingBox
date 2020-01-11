@@ -8,13 +8,16 @@ import de.foorcee.viaboundingbox.version.v_1_13.BoundingBox_v1_13;
 import de.foorcee.viaboundingbox.version.v_1_13.MappingProvider_v1_13;
 import de.foorcee.viaboundingbox.version.v_1_14.BoundingBox_v1_14;
 import de.foorcee.viaboundingbox.version.v_1_14.MappingProvider_v1_14;
+import de.foorcee.viaboundingbox.version.v_1_15.BoundingBox_v1_15;
+import de.foorcee.viaboundingbox.version.v_1_15.MappingProvider_v1_15;
 
 public class BoundingBoxMappingRegistry<T extends AbstractBoundingBoxRemappingProvider> {
     private static Multimap<Class, Class> registeredRemappingProvider = ArrayListMultimap.create();
 
     static {
-        register(MappingProvider_v1_14.class, BoundingBox_v1_14.class);
-        register(MappingProvider_v1_13.class, BoundingBox_v1_13.class, BoundingBox_v1_14.class);
+        register(MappingProvider_v1_15.class, BoundingBox_v1_15.class);
+        register(MappingProvider_v1_14.class, BoundingBox_v1_14.class, BoundingBox_v1_15.class);
+        register(MappingProvider_v1_13.class, BoundingBox_v1_13.class, BoundingBox_v1_14.class, BoundingBox_v1_15.class);
     }
 
     public static <T extends AbstractBoundingBoxRemappingProvider> void register(Class<T> mappingProvider, Class... iClass){

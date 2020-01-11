@@ -41,6 +41,15 @@ https://github.com/ForceUpdate1/ViaBoundingBox/releases
 
 ----------
 
+Known Issues:
+--------
+There may be conflicts with other plugins.
+
+Incompatibile plugins:
+- AAC (Advanced Anti Cheat) by konsolas
+
+----------
+
 How to compile Jar from Source:
 --------
 To build the project, all server versions must be cloned
@@ -55,4 +64,4 @@ License:
 MIT License, see LICENSE for more details.
 
 
-Special thanks to all our [Contributors](https://github.com/ForceUpdate1/ViaBoundingBox/graphs/contributors)
+Special thanks to all our [Contributors](https://github.com/ForceUpdate1/ViaBoundingBox/graphs/contributors) and @Gerrygames

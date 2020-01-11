@@ -8,14 +8,14 @@ Supported Versions:
 <details>
   <summary>Without ViaBoundingBox</summary>
   
-  ![without](https://i.imgur.com/qdkv4lh.gif)
+  <img src="/demo/without.gif?raw=true" width="200px">
   
 </details>
 
 <details>
   <summary>With ViaBoundingBox</summary>
   
-  ![with](https://i.imgur.com/ZKgxuQr.gif)
+  <img src="/demo/with.gif?raw=true" width="200px">
   
 </details>
 

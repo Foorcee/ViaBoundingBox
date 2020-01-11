@@ -1,6 +1,6 @@
 # ViaBoundingBox 1.0 - Spigot/Paper/Bukkit
 
-**This plugin is an addon for ViaVerion and ViaBackwards that adjusts the bounding box of blocks for the player's version**
+**This plugin is an addon for ViaVerion and ViaBackwards that adjusts the bounding box of blocks according the player's version**
 
 Supported Versions:
 **1.13.2** _(v1_13_R2)_, **1.14.x** _(v1_14_R1)_, **1.15.x** _(v1_15_R1)_
@@ -37,8 +37,6 @@ You can find official releases here:
 
 https://github.com/ForceUpdate1/ViaBoundingBox/releases
 
-**Issues**: https://github.com/ForceUpdate1/ViaBoundingBox/issues
-
 ----------
 
 Known Issues:
@@ -48,13 +46,16 @@ There may be conflicts with other plugins.
 Incompatibile plugins:
 - AAC (Advanced Anti Cheat) by konsolas
 
+**Issues**: https://github.com/ForceUpdate1/ViaBoundingBox/issues
+
 ----------
 
 How to compile Jar from Source:
 --------
-To build the project, all server versions must be cloned
+To build the project, all supported server have to be in your local maven repository. 
 
-Just clone the project and run _setup.sh_ in the _work/_ directory
+You can run ./work/setup.sh to build all required versions.  
+To actually build the project you need maven. Run mvn clean install.
 
 ----------
 

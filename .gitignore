@@ -113,7 +113,7 @@ nb-configuration.xml
 
 
 work/*
-!work/setup
+!work/setup.sh
 
 .patch
 

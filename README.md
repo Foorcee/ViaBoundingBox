@@ -37,6 +37,8 @@ You can find official releases here:
 
 https://github.com/ForceUpdate1/ViaBoundingBox/releases
 
+https://www.spigotmc.org/resources/viaboundingbox.74252/
+
 ----------
 
 Known Issues:

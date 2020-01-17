@@ -48,5 +48,4 @@ public abstract class AbstractBoundingBoxRemappingProvider<D,M,V> {
     public Predicate<Integer> equalOrBelow(ProtocolVersion protocolVersion) {
         return id -> id <= protocolVersion.getId();
     }
-
 }

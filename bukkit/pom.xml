@@ -5,7 +5,7 @@
     <parent>
         <artifactId>ViaBoundingBox</artifactId>
         <groupId>de.foorcee.viaboundingbox</groupId>
-        <version>1.0</version>
+        <version>1.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
         <dependency>
             <groupId>de.foorcee.viaboundingbox</groupId>
             <artifactId>viahitbox-commons</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

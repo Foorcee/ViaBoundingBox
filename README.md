@@ -3,7 +3,7 @@
 **This plugin is an addon for ViaVersion and ViaBackwards that adjusts the bounding box of blocks according to the player's version**
 
 Supported Versions:
-**1.13.2** _(v1_13_R2)_, **1.14.x** _(v1_14_R1)_, **1.15.x** _(v1_15_R1)_
+**1.13.2** _(v1_13_R2)_, **1.14.x** _(v1_14_R1)_, **1.15.x** _(v1_15_R1)_, **1.16.x** _(v1_16_R1)_
 
 <details>
   <summary>Without ViaBoundingBox</summary>

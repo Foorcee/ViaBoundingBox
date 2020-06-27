@@ -1,4 +1,4 @@
-package de.foorcee.viaboundingbox.version.v_1_13;
+package de.foorcee.viaboundingbox.version.v1_13;
 
 import de.foorcee.viaboundingbox.api.versions.ICollisionBridge;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;
@@ -6,9 +6,10 @@ import lombok.RequiredArgsConstructor;
 import net.minecraft.server.v1_13_R2.*;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 @RequiredArgsConstructor
-public class CollisionBridge_v1_13 implements ICollisionBridge<EntityPlayer, AxisAlignedBB> {
+public class CollisionBridge_v1_13 implements ICollisionBridge<EntityPlayer, AxisAlignedBB, VoxelShape> {
 
     private final BoundingBox_v1_13 injector;
 
@@ -26,6 +27,11 @@ public class CollisionBridge_v1_13 implements ICollisionBridge<EntityPlayer, Axi
         }
 
         return this.checkBlockCollision(entity, voxelshape, voxelshape1, flag1);
+    }
+
+    @Override
+    public Stream<VoxelShape> checkBlockCollision(EntityPlayer player, AxisAlignedBB boundingBox) {
+        throw new UnsupportedOperationException("Not implemented in 1.13");
     }
 
     private List<VoxelShape> checkBlockCollision(Entity player, VoxelShape voxelshape, VoxelShape voxelshape1, boolean flag) {

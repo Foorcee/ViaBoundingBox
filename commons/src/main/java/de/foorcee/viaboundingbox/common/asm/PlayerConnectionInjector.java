@@ -22,7 +22,7 @@ public class PlayerConnectionInjector {
         ClassTransformer[] classTransformers = injector.getClassTransformers();
 
         for (ClassTransformer classTransformer : classTransformers) {
-           byte[] classData = ByteCodeUtils.injectClass(classLoader, classTransformer);
+           byte[] classData = ByteCodeUtils.injectClass(classTransformer);
             ClassLoaderUtil.loadClass(classLoader, classData, classTransformer.getClassName());
         }
 

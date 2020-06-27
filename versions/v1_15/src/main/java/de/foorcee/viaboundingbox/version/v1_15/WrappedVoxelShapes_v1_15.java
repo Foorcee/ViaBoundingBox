@@ -1,19 +1,17 @@
-package de.foorcee.viaboundingbox.version.v_1_14;
+package de.foorcee.viaboundingbox.version.v1_15;
 
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShapes;
-import net.minecraft.server.v1_14_R1.AxisAlignedBB;
-import net.minecraft.server.v1_14_R1.IBlockData;
-import net.minecraft.server.v1_14_R1.VoxelShape;
-import net.minecraft.server.v1_14_R1.VoxelShapes;
-import org.bukkit.block.data.BlockData;
+import net.minecraft.server.v1_15_R1.AxisAlignedBB;
+import net.minecraft.server.v1_15_R1.VoxelShape;
+import net.minecraft.server.v1_15_R1.VoxelShapes;
 
-public class WrappedVoxelShapes_v1_14 extends WrappedVoxelShapes<VoxelShape> {
+public class WrappedVoxelShapes_v1_15 extends WrappedVoxelShapes<VoxelShape> {
 
     private final WrappedVoxelShape<VoxelShape> EMPTY;
     private final WrappedVoxelShape<VoxelShape> FULL;
 
-    public WrappedVoxelShapes_v1_14() {
+    public WrappedVoxelShapes_v1_15() {
         super();
         EMPTY = new WrappedVoxelShape<>(VoxelShapes.a());
         FULL = new WrappedVoxelShape<>(VoxelShapes.b());

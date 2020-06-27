@@ -1,9 +1,10 @@
 package de.foorcee.viaboundingbox.common;
 
 import de.foorcee.viaboundingbox.api.versions.AbstractBoundingBoxInjector;
-import de.foorcee.viaboundingbox.version.v_1_13.BoundingBox_v1_13;
-import de.foorcee.viaboundingbox.version.v_1_14.BoundingBox_v1_14;
-import de.foorcee.viaboundingbox.version.v_1_15.BoundingBox_v1_15;
+import de.foorcee.viaboundingbox.version.v1_16.BoundingBox_v1_16;
+import de.foorcee.viaboundingbox.version.v1_13.BoundingBox_v1_13;
+import de.foorcee.viaboundingbox.version.v1_14.BoundingBox_v1_14;
+import de.foorcee.viaboundingbox.version.v1_15.BoundingBox_v1_15;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ public class BoundingBoxRegistry<T extends AbstractBoundingBoxInjector> {
         register(BoundingBox_v1_14.class, "v1_14_R1");
         register(BoundingBox_v1_13.class, "v1_13_R2");
         register(BoundingBox_v1_15.class, "v1_15_R1");
+        register(BoundingBox_v1_16.class,  "v1_16_R1");
     }
 
     public static <T extends AbstractBoundingBoxInjector> void register(Class<T> clazz, String... versions){

@@ -1,21 +1,15 @@
-package de.foorcee.viaboundingbox.version.v_1_13;
+package de.foorcee.viaboundingbox.version.v1_13;
 
 import de.foorcee.viaboundingbox.api.asm.ClassTransformer;
 import de.foorcee.viaboundingbox.api.asm.MethodTransformer;
 import de.foorcee.viaboundingbox.api.versions.*;
 import net.minecraft.server.v1_13_R2.AxisAlignedBB;
 import net.minecraft.server.v1_13_R2.EntityPlayer;
-import net.minecraft.server.v1_13_R2.IBlockData;
 import net.minecraft.server.v1_13_R2.VoxelShape;
-import org.apache.commons.lang3.ArrayUtils;
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.*;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer, AxisAlignedBB, VoxelShape, BlockData, Material> {
 
@@ -31,7 +25,7 @@ public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer,
     }
 
     @Override
-    public ICollisionBridge<EntityPlayer, AxisAlignedBB> getBridge() {
+    public ICollisionBridge<EntityPlayer, AxisAlignedBB, VoxelShape> getBridge() {
         return new CollisionBridge_v1_13(this);
     }
 
@@ -45,7 +39,6 @@ public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer,
                     new MethodTransformer("a", "(Lnet/minecraft/server/v1_13_R2/PacketPlayInFlying;)V") {
                         @Override
                         public void transform(ClassNode classNode, MethodNode methodNode) {
-                            List<AbstractInsnNode> toRemove = new ArrayList<>();
 
                             AbstractInsnNode[] array = methodNode.instructions.toArray();
                             for (AbstractInsnNode node : array) {
@@ -63,7 +56,7 @@ public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer,
                                             if(prev instanceof VarInsnNode){
                                                 VarInsnNode varInsnNode = (VarInsnNode) prev;
                                                 if(varInsnNode.getOpcode() == Opcodes.ALOAD && varInsnNode.var == 2){
-                                                    toRemove.add(varInsnNode);
+                                                    methodNode.instructions.remove(varInsnNode);
                                                     break;
                                                 }
                                             }
@@ -72,7 +65,6 @@ public class BoundingBox_v1_13 extends AbstractBoundingBoxInjector<EntityPlayer,
                                     }
                                 }
                             }
-                            toRemove.forEach(r -> methodNode.instructions.remove(r));
                          }
                     })
     };

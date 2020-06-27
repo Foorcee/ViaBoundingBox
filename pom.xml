@@ -7,13 +7,18 @@
     <groupId>de.foorcee.viaboundingbox</groupId>
     <artifactId>ViaBoundingBox</artifactId>
     <packaging>pom</packaging>
-    <version>1.1</version>
+    <version>1.2</version>
     <modules>
         <module>api</module>
         <module>versions</module>
         <module>commons</module>
         <module>bukkit</module>
     </modules>
+
+    <properties>
+        <viaversion.version>3.0.0</viaversion.version>
+        <asm.version>7.3.1</asm.version>
+    </properties>
 
     <repositories>
         <repository>
@@ -37,7 +42,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.10</version>
+            <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

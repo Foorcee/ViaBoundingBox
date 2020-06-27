@@ -1,4 +1,4 @@
-package de.foorcee.viaboundingbox.version.v_1_15;
+package de.foorcee.viaboundingbox.version.v1_15;
 
 import de.foorcee.viaboundingbox.api.asm.ClassTransformer;
 import de.foorcee.viaboundingbox.api.asm.MethodTransformer;
@@ -27,7 +27,7 @@ public class BoundingBox_v1_15 extends AbstractBoundingBoxInjector<EntityPlayer,
     }
 
     @Override
-    public ICollisionBridge<EntityPlayer, AxisAlignedBB> getBridge() {
+    public ICollisionBridge<EntityPlayer, AxisAlignedBB, VoxelShape> getBridge() {
         return new CollisionBridge_v1_15(this);
     }
 

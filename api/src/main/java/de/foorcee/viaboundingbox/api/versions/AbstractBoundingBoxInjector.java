@@ -12,6 +12,6 @@ public abstract class AbstractBoundingBoxInjector<P,A,V,D,M> {
 
     public abstract ClassTransformer[] getClassTransformers();
 
-    public abstract ICollisionBridge<P, A> getBridge();
+    public abstract ICollisionBridge<P, A, V> getBridge();
     public abstract WrappedVoxelShapes<V> getVoxelShapes();
 }

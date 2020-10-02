@@ -2,9 +2,9 @@ package de.foorcee.viaboundingbox.version.v1_16;
 
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShapes;
-import net.minecraft.server.v1_16_R1.AxisAlignedBB;
-import net.minecraft.server.v1_16_R1.VoxelShape;
-import net.minecraft.server.v1_16_R1.VoxelShapes;
+import net.minecraft.server.v1_16_R2.AxisAlignedBB;
+import net.minecraft.server.v1_16_R2.VoxelShape;
+import net.minecraft.server.v1_16_R2.VoxelShapes;
 
 public class WrappedVoxelShapes_v1_16 extends WrappedVoxelShapes<VoxelShape> {
 

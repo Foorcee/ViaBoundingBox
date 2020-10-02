@@ -18,7 +18,7 @@ public class BoundingBoxRegistry<T extends AbstractBoundingBoxInjector> {
         register(BoundingBox_v1_14.class, "v1_14_R1");
         register(BoundingBox_v1_13.class, "v1_13_R2");
         register(BoundingBox_v1_15.class, "v1_15_R1");
-        register(BoundingBox_v1_16.class,  "v1_16_R1");
+        register(BoundingBox_v1_16.class,  "v1_16_R2");
     }
 
     public static <T extends AbstractBoundingBoxInjector> void register(Class<T> clazz, String... versions){

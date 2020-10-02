@@ -4,7 +4,7 @@ import com.google.common.collect.Streams;
 import de.foorcee.viaboundingbox.api.versions.ICollisionBridge;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;
 import lombok.RequiredArgsConstructor;
-import net.minecraft.server.v1_16_R1.*;
+import net.minecraft.server.v1_16_R2.*;
 import org.bukkit.block.BlockState;
 
 import javax.annotation.Nullable;

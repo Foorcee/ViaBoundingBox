@@ -1,10 +1,10 @@
 package de.foorcee.viaboundingbox.version.v1_16;
 
 import de.foorcee.viaboundingbox.api.versions.WrappedBlockData;
-import net.minecraft.server.v1_16_R1.IBlockData;
+import net.minecraft.server.v1_16_R2.IBlockData;
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
-import org.bukkit.craftbukkit.v1_16_R1.block.data.CraftBlockData;
+import org.bukkit.craftbukkit.v1_16_R2.block.data.CraftBlockData;
 
 public class WrappedBlockData_v1_16 extends WrappedBlockData<BlockData, Material> {
 

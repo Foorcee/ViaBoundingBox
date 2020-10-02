@@ -5,9 +5,9 @@ import de.foorcee.viaboundingbox.api.asm.MethodTransformer;
 import de.foorcee.viaboundingbox.api.versions.AbstractBoundingBoxInjector;
 import de.foorcee.viaboundingbox.api.versions.ICollisionBridge;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShapes;
-import net.minecraft.server.v1_16_R1.AxisAlignedBB;
-import net.minecraft.server.v1_16_R1.EntityPlayer;
-import net.minecraft.server.v1_16_R1.VoxelShape;
+import net.minecraft.server.v1_16_R2.AxisAlignedBB;
+import net.minecraft.server.v1_16_R2.EntityPlayer;
+import net.minecraft.server.v1_16_R2.VoxelShape;
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.objectweb.asm.Opcodes;
@@ -40,8 +40,8 @@ public class BoundingBox_v1_16 extends AbstractBoundingBoxInjector<EntityPlayer,
     }
 
     public static ClassTransformer[] classTransformers = new ClassTransformer[]{
-            new ClassTransformer("net.minecraft.server.v1_16_R1.PlayerConnection",
-                    new MethodTransformer("a", "(Lnet/minecraft/server/v1_16_R1/PacketPlayInFlying;)V") {
+            new ClassTransformer("net.minecraft.server.v1_16_R2.PlayerConnection",
+                    new MethodTransformer("a", "(Lnet/minecraft/server/v1_16_R2/PacketPlayInFlying;)V") {
                         @Override
                         public void transform(ClassNode classNode, MethodNode methodNode) {
                             List<AbstractInsnNode> toRemove = new ArrayList<>();
@@ -50,8 +50,8 @@ public class BoundingBox_v1_16 extends AbstractBoundingBoxInjector<EntityPlayer,
                             for (AbstractInsnNode node : array) {
                                 if (node instanceof MethodInsnNode) {
                                     MethodInsnNode methodInsnNode = (MethodInsnNode) node;
-                                    if (methodInsnNode.getOpcode() == Opcodes.INVOKEVIRTUAL && methodInsnNode.owner.equals("net/minecraft/server/v1_16_R1/WorldServer")
-                                            && methodInsnNode.name.equals("getCubes") && methodInsnNode.desc.equals("(Lnet/minecraft/server/v1_16_R1/Entity;Lnet/minecraft/server/v1_16_R1/AxisAlignedBB;)Z")) {
+                                    if (methodInsnNode.getOpcode() == Opcodes.INVOKEVIRTUAL && methodInsnNode.owner.equals("net/minecraft/server/v1_16_R2/WorldServer")
+                                            && methodInsnNode.name.equals("getCubes") && methodInsnNode.desc.equals("(Lnet/minecraft/server/v1_16_R2/Entity;Lnet/minecraft/server/v1_16_R2/AxisAlignedBB;)Z")) {
                                         methodInsnNode.setOpcode(Opcodes.INVOKESTATIC);
                                         methodInsnNode.owner = "de/foorcee/viaboundingbox/common/asm/BoundingBoxCollisionBridge";
                                         methodInsnNode.name = "checkCollision";
@@ -74,7 +74,7 @@ public class BoundingBox_v1_16 extends AbstractBoundingBoxInjector<EntityPlayer,
                             toRemove.forEach(r -> methodNode.instructions.remove(r));
                         }
                     },
-                    new MethodTransformer("a", "(Lnet/minecraft/server/v1_16_R1/IWorldReader;Lnet/minecraft/server/v1_16_R1/AxisAlignedBB;)Z") {
+                    new MethodTransformer("a", "(Lnet/minecraft/server/v1_16_R2/IWorldReader;Lnet/minecraft/server/v1_16_R2/AxisAlignedBB;)Z") {
                         @Override
                         public void transform(ClassNode classNode, MethodNode methodNode) {
 

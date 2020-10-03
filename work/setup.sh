@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-versions=(1.13.2 1.14.4 1.15.1)
+versions=(1.13.2 1.14.4 1.15.1 1.16.1)
 buildtools="https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar"
 echo "Downloading BuildTools Sources"
 curl -s -o "BuildTools.jar" $buildtools

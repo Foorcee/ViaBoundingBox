@@ -5,11 +5,11 @@
     <parent>
         <artifactId>ViaBoundingBox</artifactId>
         <groupId>de.foorcee.viaboundingbox</groupId>
-        <version>1.1</version>
+        <version>1.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>viaboundingbox-api</artifactId>
+    <artifactId>ViaBoundingBox-Version-API</artifactId>
 
     <repositories>
         <repository>
@@ -22,20 +22,20 @@
         <dependency>
             <groupId>us.myles</groupId>
             <artifactId>viaversion</artifactId>
-            <version>2.1.1</version>
+            <version>${viaversion.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm</artifactId>
-            <version>5.0.3</version>
+            <version>${asm.version}</version>
             <scope>compile</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-tree -->
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm-tree</artifactId>
-            <version>5.0.3</version>
+            <version>${asm.version}</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

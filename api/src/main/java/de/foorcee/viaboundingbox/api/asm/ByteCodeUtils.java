@@ -8,7 +8,7 @@ import org.objectweb.asm.tree.MethodNode;
 import java.io.IOException;
 
 public class ByteCodeUtils {
-    public static byte[] injectClass(ClassLoader classLoader, ClassTransformer classTransformer) throws IOException {
+    public static byte[] injectClass(ClassTransformer classTransformer) throws IOException {
         ClassWriter classWriter = new ClassWriter(ClassWriter.COMPUTE_MAXS);
         ClassNode classNode = new ClassNode();
         ClassReader reader =  new ClassReader(ClassLoader.getSystemResourceAsStream(classTransformer.getClassName().replace('.', '/') + ".class"));

@@ -1,7 +1,6 @@
 import de.foorcee.viaboundingbox.api.asm.ByteCodeUtils;
 import de.foorcee.viaboundingbox.api.asm.ClassTransformer;
-import de.foorcee.viaboundingbox.version.v_1_14.BoundingBox_v1_14;
-import org.bukkit.Bukkit;
+import de.foorcee.viaboundingbox.version.v1_14.BoundingBox_v1_14;
 import org.junit.Test;
 
 import java.io.DataOutputStream;
@@ -14,7 +13,7 @@ public class TestByteCode_v1_14{
     @Test
     public void test() throws IOException {
         for (ClassTransformer classTransformer : BoundingBox_v1_14.classTransformers) {
-            byte[] data = ByteCodeUtils.injectClass(Bukkit.class.getClassLoader(), classTransformer);
+            byte[] data = ByteCodeUtils.injectClass(classTransformer);
             String className = classTransformer.getClassName().replace("\\.", "_");
             File outputDir = new File("test/");
             File file = new File(outputDir, className + ".class");

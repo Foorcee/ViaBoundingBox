@@ -1,33 +1,34 @@
-package de.foorcee.viaboundingbox.version.v_1_15;
+package de.foorcee.viaboundingbox.version.v1_14;
 
 import com.google.common.collect.Streams;
 import de.foorcee.viaboundingbox.api.versions.ICollisionBridge;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;
 import lombok.RequiredArgsConstructor;
-import net.minecraft.server.v1_15_R1.*;
+import net.minecraft.server.v1_14_R1.*;
 
 import java.util.Collections;
+import java.util.Spliterator;
 import java.util.Spliterators;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 @RequiredArgsConstructor
-public class CollisionBridge_v1_15 implements ICollisionBridge<EntityPlayer, AxisAlignedBB> {
+public class CollisionBridge_v1_14 implements ICollisionBridge<EntityPlayer, AxisAlignedBB, VoxelShape> {
 
-    private final BoundingBox_v1_15 injector;
+    private final BoundingBox_v1_14 injector;
 
     @Override
     public boolean checkCollision(EntityPlayer player, AxisAlignedBB boundingBox) {
-        boolean value = Streams.concat(
-                checkBlockCollision(player.world, player, boundingBox),
-                player.world.b(player, boundingBox, Collections.emptySet()) //checkEntityCollision
+        return Streams.concat(
+                checkBlockCollision(player, boundingBox),
+                player.world.a(player, boundingBox, Collections.emptySet()) //checkEntityCollision
         ).allMatch(VoxelShape::isEmpty);
-        return value;
     }
 
-
-    private Stream<VoxelShape> checkBlockCollision(World world, EntityPlayer player, AxisAlignedBB boundingBox) {
+    @Override
+    public Stream<VoxelShape> checkBlockCollision(EntityPlayer player, AxisAlignedBB boundingBox) {
+        World world = player.world;
         final VoxelShapeCollision collisionShape = VoxelShapeCollision.a(player);
 
         final CursorPosition cursor = new CursorPosition(
@@ -40,12 +41,13 @@ public class CollisionBridge_v1_15 implements ICollisionBridge<EntityPlayer, Axi
         final BlockPosition.MutableBlockPosition position = new BlockPosition.MutableBlockPosition();
         final VoxelShape voxelShape = VoxelShapes.a(boundingBox);
 
-        return StreamSupport.stream(new Spliterators.AbstractSpliterator<VoxelShape>(Long.MAX_VALUE, 1280) {
-            boolean checkBorder = false;
+        return StreamSupport.stream(new Spliterators.AbstractSpliterator<VoxelShape>(Long.MAX_VALUE, Spliterator.NONNULL | Spliterator.IMMUTABLE) {
+            boolean checkedBorder = false;
 
             public boolean tryAdvance(Consumer<? super VoxelShape> consumer) {
-                if (!this.checkBorder) {
-                    this.checkBorder = true;
+                if (!this.checkedBorder) {
+                    this.checkedBorder = true;
+
                     VoxelShape borderShape = world.getWorldBorder().a();
                     boolean flag = VoxelShapes.c(borderShape, VoxelShapes.a(player.getBoundingBox().shrink(1.0E-7D)), OperatorBoolean.AND);
                     boolean flag1 = VoxelShapes.c(borderShape, VoxelShapes.a(player.getBoundingBox().g(1.0E-7D)), OperatorBoolean.AND);
@@ -62,18 +64,16 @@ public class CollisionBridge_v1_15 implements ICollisionBridge<EntityPlayer, Axi
                     int z = cursor.d();
 
                     int d = cursor.e();
+                    if (d == 3) continue;
 
-                    if(d == 3) continue;
-
-                    IBlockAccess chunk = world.c(x >> 4, z >> 4);
+                    IChunkAccess chunk = world.getChunkAt(x >> 4, z >> 4, world.O(), false);
                     if (chunk == null) continue;
 
-                    position.d(x, y, z);
-                    IBlockData blockData = chunk.getType(position);
+                    IBlockData blockData = chunk.getType(position.d(x, y, z));
 
+                    //TODO f() is hasLargeCollisionShape()! Is this important for any remap?
                     if ((d != 1 || blockData.f()) && (d != 2 || blockData.getBlock() == Blocks.MOVING_PISTON)) {
-
-                        WrappedVoxelShape<VoxelShape> wrappedBlockShape = injector.getRemappingProvider().getRemappedBlockBoundingBox(player.getBukkitEntity(), new WrappedBlockData_v1_15(blockData));
+                        WrappedVoxelShape<VoxelShape> wrappedBlockShape = injector.getRemappingProvider().getRemappedBlockBoundingBox(player.getBukkitEntity(), new WrappedBlockData_v1_14(blockData));
                         VoxelShape blockShape;
 
                         if (wrappedBlockShape == null) {

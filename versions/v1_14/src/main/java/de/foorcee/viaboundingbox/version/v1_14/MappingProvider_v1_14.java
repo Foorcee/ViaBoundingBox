@@ -1,4 +1,4 @@
-package de.foorcee.viaboundingbox.version.v_1_14;
+package de.foorcee.viaboundingbox.version.v1_14;
 
 import de.foorcee.viaboundingbox.api.remapping.AbstractBoundingBoxRemappingProvider;
 import de.foorcee.viaboundingbox.api.versions.WrappedVoxelShape;

@@ -17,7 +17,7 @@
 
     <properties>
         <viaversion.version>3.0.0</viaversion.version>
-        <asm.version>7.3.1</asm.version>
+        <asm.version>9.0</asm.version>
     </properties>
 
     <repositories>
